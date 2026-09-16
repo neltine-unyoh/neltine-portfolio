@@ -1,0 +1,293 @@
+.section {
+  padding: 110px 0 120px;
+  background: var(--background);
+}
+
+.container {
+  width: min(100% - 48px, var(--container-width));
+  margin: 0 auto;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  max-width: 900px;
+  color: var(--foreground);
+  font-size: clamp(20px, 3vw, 24px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  font-weight: 300;
+}
+
+.viewAll {
+  flex-shrink: 0;
+  color: var(--foreground);
+  font-size: 10px;
+  font-weight: 500;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--foreground);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.viewAll:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Project grid */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+
+.project {
+  position: relative;
+  min-width: 0;
+  min-height: 340px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 20px 50px rgba(17, 17, 17, 0.08);
+}
+
+/* Card header */
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--foreground);
+  font-size: 16px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project:hover .arrow {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: rotate(45deg);
+}
+
+/* Main card content */
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* Logo */
+
+.logoArea {
+  flex: 0 0 105px;
+  width: 105px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project:hover .logo {
+  transform: scale(1.06);
+}
+
+/* Content */
+
+.projectContent {
+  min-width: 0;
+  flex: 1;
+}
+
+.projectType {
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.projectName {
+  color: var(--foreground);
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Footer */
+
+.projectFooter {
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  padding: 6px 8px;
+  background: #f3f4f6;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.caseStudy {
+  flex-shrink: 0;
+  color: var(--foreground);
+  font-size: 10px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.caseStudy span {
+  margin-left: 4px;
+}
+
+.project:hover .caseStudy {
+  color: var(--primary);
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .section {
+    padding: 72px 0 80px;
+  }
+
+  .container {
+    width: min(100% - 32px, var(--container-width));
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    min-height: 300px;
+    padding: 22px;
+  }
+
+  .main {
+    gap: 20px;
+  }
+
+  .logoArea {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 110px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .projectName {
+    font-size: 28px;
+  }
+
+  .projectFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
