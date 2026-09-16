@@ -1,183 +1,1572 @@
-.page { padding-bottom: 140px; background: radial-gradient(circle at 85% 8%, rgba(37, 99, 235, .08), transparent 24%); }
+.page {
+  background: #fff;
+  color: var(--foreground);
+}
 
 .container {
   width: min(100% - 48px, var(--container-width));
   margin: 0 auto;
 }
 
-/* Hero */
+/* ========================================
+   ABOUT HERO
+======================================== */
 
 .hero {
-  padding: 118px 0 110px;
+  position: relative;
+  width: 100%;
+  min-height: 720px;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  background: var(--background);
   border-bottom: 1px solid var(--border);
 }
 
-.eyebrow {
-  margin-bottom: 28px;
+/* The inner container controls content width */
+.hero > .container {
+  width: min(100% - 48px, var(--container-width));
+  min-height: 720px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+
+/* ========================================
+   HERO LEFT
+======================================== */
+
+.heroLeft {
+  position: relative;
+  z-index: 3;
+  padding: 60px 0;
+}
+
+.heroLabel {
+  width: 100%;
+  max-width: 650px;
+  margin-bottom: 55px;
+
+  display: flex;
+  justify-content: space-between;
+
   color: var(--primary);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.heroLabel span:last-child {
+  color: var(--muted);
+}
+
+.intro {
+  margin-bottom: 16px;
+
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.12em;
 }
 
 .heroTitle {
-  max-width: 950px;
-  font-size: clamp(48px, 7vw, 84px);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  max-width: 700px;
+  margin: 0;
+
+  color: var(--foreground);
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.065em;
   font-weight: 600;
 }
 
-.heroDescription {
-  max-width: 680px;
+.heroTitle span {
+  color: var(--primary);
+}
+
+.heroText {
+  max-width: 570px;
   margin-top: 36px;
+}
+
+.heroText p {
+  margin: 0;
+
   color: var(--muted);
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
-/* Sections */
-
-.section {
-  padding: 104px 0;
-  border-bottom: 1px solid var(--border);
+.heroText p + p {
+  margin-top: 12px;
 }
 
-.sectionGrid {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 80px;
-}
+.heroMeta {
+  margin-top: 42px;
 
-.sectionLabel {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-}
-
-.content {
-  max-width: 720px;
-}
-
-.content h2 {
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  font-weight: 600;
-}
-
-.content p {
-  margin-top: 28px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.75;
-}
-
-/* What I bring */
-
-.skills {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin-top: 8px;
-  border-top: 1px solid var(--border);
-}
-
-.skill {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 16px;
-  font-weight: 500;
-  transition: color .2s ease, padding-left .25s ease;
-}
-
-.skill:hover { color: var(--primary); padding-left: 10px; }
-
-.skill:nth-child(odd) {
-  margin-right: 40px;
-}
-
-.skill:nth-child(even) {
-  padding-left: 40px;
-  border-left: 1px solid var(--border);
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .container {
-    width: min(100% - 32px, var(--container-width));
-  }
-
-  .hero {
-    padding: 100px 0 80px;
-  }
-
-  .section {
-    padding: 72px 0;
-  }
-
-  .sectionGrid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .heroDescription {
-    font-size: 17px;
-  }
-
-  .skills {
-    grid-template-columns: 1fr;
-  }
-
-  .skill:nth-child(odd) {
-    margin-right: 0;
-  }
-
-  .skill:nth-child(even) {
-    padding-left: 0;
-    border-left: none;
-  }
-}
-
-.competencies {
-  max-width: 800px;
-  border-top: 1px solid var(--border);
-}
-
-.competency {
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.competency h3 {
-  font-size: 20px;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
-.competency p {
-  max-width: 650px;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.tools {
-  max-width: 800px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.tools span {
-  padding: 10px 13px;
+.heroMeta span {
+  padding: 8px 12px;
+
   border: 1px solid var(--border);
+  border-radius: 999px;
+
   background: var(--surface);
+  color: var(--muted);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   HERO VISUAL
+======================================== */
+
+.heroVisual {
+  position: relative;
+
+  width: 100%;
+  height: 720px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+/* ========================================
+   PHOTO FRAME
+======================================== */
+
+
+
+.photo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center top;
+
+  transform: scale(1.12);
+}
+
+
+/* ========================================
+   VISUAL BLOB
+======================================== */
+
+
+
+
+/* ========================================
+   FLOATING TOP CARD
+======================================== */
+
+.visualCardTop {
+  position: absolute;
+  z-index: 5;
+
+  top: 150px;
+  left: 10px;
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  background: var(--surface);
+
+  box-shadow:
+    0 15px 40px rgba(17, 17, 17, 0.08);
+
+  color: var(--foreground);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  transform: rotate(-5deg);
+}
+
+.cardIcon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   HIDE OLD HERO ELEMENTS
+======================================== */
+
+.visualCardBottom,
+.annotation {
+  display: none;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .hero > .container {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 20px;
+  }
+
+  .heroTitle {
+    font-size: clamp(40px, 5vw, 58px);
+  }
+
+  .photoFrame {
+    width: 400px;
+    height: 400px;
+  }
+
+  .visualBlob {
+    width: 450px;
+    height: 450px;
+  }
+
+  .visualCardTop {
+    left: 0;
+  }
+}
+
+
+@media (max-width: 750px) {
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero > .container {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .heroLeft {
+    padding: 70px 0 30px;
+  }
+
+  .heroVisual {
+    height: 500px;
+  }
+
+  .photoFrame {
+    width: 380px;
+    height: 380px;
+  }
+
+  .visualBlob {
+    width: 420px;
+    height: 420px;
+  }
+
+  .visualCardTop {
+    top: 50px;
+    left: 10%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .hero > .container {
+    width: min(100% - 32px, var(--container-width));
+  }
+
+  .heroLeft {
+    padding: 60px 0 20px;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+  }
+
+  .heroText {
+    margin-top: 28px;
+  }
+
+  .heroText p {
+    font-size: 14px;
+  }
+
+  .heroMeta {
+    margin-top: 30px;
+  }
+
+  .heroVisual {
+    height: 420px;
+  }
+
+  .photoFrame {
+    width: 320px;
+    height: 320px;
+  }
+
+  .visualBlob {
+    width: 360px;
+    height: 360px;
+  }
+
+  .visualCardTop {
+    top: 30px;
+    left: 5%;
+    transform: scale(0.9) rotate(-5deg);
+  }
+}
+
+
+
+/* ========================================
+   THE SHIFT
+======================================== */
+
+/* ========================================
+   THE SHIFT — FULL WIDTH
+======================================== */
+
+.storySection {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 70px 0;
+  background: #eaf1ff;
+  border-bottom: 1px solid #d6e3ff;
+}
+
+/* Header */
+
+.storyHeader {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 70px;
+}
+
+.sectionLabel {
+  padding-top: 8px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.storyHeader h2 {
+  max-width: 1000px;
+  color: var(--foreground);
+  font-size: clamp(40px, 5vw, 46px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.storyHeader h2 span {
+  color: var(--primary);
+}
+
+.storyHeader > div > p {
+  max-width: 900px;
+  margin-top: 28px;
+  color: #4b5563;
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.65;
+}
+
+/* Timeline */
+
+.storyTimeline {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr 50px 1fr;
+  align-items: start;
+}
+
+/* Individual item */
+
+.storyItem {
+  min-width: 0;
+  padding: 26px 30px 30px 0;
+}
+
+.storyItem + .storyItem {
+  padding-left: 30px;
+  border-left: 1px solid #c7d7f7;
+}
+
+.storyNumber {
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Visual block */
+
+.storyVisual {
+  height: 180px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid #c7d7f7;
+  border-radius: 18px;
+  background: #ffffff;
+  color: var(--foreground);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.storyItem:hover .storyVisual {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+}
+
+/* Visual icon */
+
+.visualSymbol {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf1ff;
+  color: var(--primary);
+  font-size: 22px;
+  font-weight: 500;
+  box-shadow: 0 8px 25px rgba(17, 17, 17, 0.08);
+}
+
+/* Blue visual */
+
+.blueVisual {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.blueVisual .visualSymbol {
+  background: #ffffff;
+  color: var(--primary);
+}
+
+/* Final visual */
+
+.finalVisual {
+  background: #dbeafe;
+  color: var(--primary);
+  border-color: #bfdbfe;
+}
+
+.finalVisual .visualSymbol {
+  background: #ffffff;
+  color: var(--primary);
+}
+
+/* Text */
+
+.storyCategory {
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.storyItem h3 {
+  color: var(--foreground);
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.storyDescription {
+  max-width: 300px;
+  margin-top: 15px;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Question */
+
+.storyQuestion {
+  max-width: 300px;
+  margin-top: 10px;
+  padding-top: 16px;
+}
+
+.storyQuestion span {
+  display: block;
+  color: var(--primary);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.storyQuestion strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Connectors */
+
+.storyConnector {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storyConnector span {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c7d7f7;
+  border-radius: 50%;
+  background: #eaf1ff;
+  color: var(--primary);
+  font-size: 16px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .storySection {
+    padding: 100px 0;
+  }
+
+  .storyHeader {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .storyTimeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .storyItem {
+    padding: 30px 0;
+  }
+
+  .storyItem + .storyItem {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid #c7d7f7;
+  }
+
+  .storyConnector {
+    height: 50px;
+    justify-content: flex-start;
+  }
+
+  .storyConnector span {
+    transform: rotate(90deg);
+  }
+
+  .storyDescription,
+  .storyQuestion {
+    max-width: 500px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .storySection {
+    padding: 80px 0;
+  }
+
+  .storyHeader h2 {
+    font-size: 48px;
+  }
+
+  .storyHeader > div > p {
+    font-size: 15px;
+  }
+
+  .storyTimeline {
+    margin-top: 60px;
+  }
+
+  .storyVisual {
+    height: 150px;
+  }
+}
+/* =========================================
+   HOW I WORK
+========================================= */
+
+.decisionSection {
+  width: 100%;
+  padding: 40px 0 160px;
+  border-bottom: 1px solid var(--border);
+  background : white;
+}
+
+.decisionSection .sectionLabel {
+  margin-bottom: 34px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.decisionIntro {
+  text-align: center;
+}
+
+.decisionIntro h2 {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--foreground);
+  font-size: clamp(42px, 5.5vw, 72px);
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.decisionIntro h2 span {
+  color: var(--primary);
+}
+
+.decisionIntro > p {
+  max-width: 650px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   PROCESS AREA
+========================================= */
+
+.process {
+  position: relative;
+  width: min(100%, 1200px);
+  height: 900px;
+  margin: 120px auto 0;
+  margin-top: 40px;
+}
+
+
+/* =========================================
+   ORBIT
+========================================= */
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 680px;
+  height: 680px;
+  transform: translate(-50%, -50%);
+  border: 1px dashed #cbd5e1;
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   CENTER PRODUCT CIRCLE
+========================================= */
+
+.productCircle {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 5;
+
+  width: 300px;
+  height: 300px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(147, 197, 253, 0.45),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 75% 70%,
+      rgba(167, 243, 208, 0.45),
+      transparent 48%
+    ),
+    #eef5ff;
+
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.08),
+    0 25px 70px rgba(37, 99, 235, 0.12);
+}
+
+
+.productTitle {
+  color: var(--foreground);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.productMeta {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================
+   PROCESS NODES
+========================================= */
+
+.processNode {
+  position: absolute;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  gap: -55px;
+}
+
+
+/* =========================================
+   NODE CIRCLE
+========================================= */
+
+.nodeCircle {
+  width: 190px;
+  height: 190px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d5dce7;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 12px 35px rgba(17, 17, 17, 0.05);
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nodeCircle:hover {
+  transform: scale(1.04);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.12);
+}
+
+.nodeNumber {
+  color: #9aa4b2;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.nodeTitle {
+  color: var(--foreground);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.nodeQuestion {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   DESCRIPTIONS
+========================================= */
+
+.nodeDescription {
+  width: 200px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   NODE POSITIONS
+========================================= */
+
+
+/* 01 — TOP */
+
+.nodeTop {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  gap: 28px;
+
+
+.nodeTop .nodeDescription {
+  width: 300px;
+  text-align: center;
+}}
+
+.nodeTop .nodeDescription {
+  text-align: center;
+  margin-top: -180px;
+  margin-right : -400px;
+}
+
+
+/* 02 — RIGHT */
+
+.nodeRight {
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%);
+  flex-direction: row;
+}
+
+.nodeRight .nodeDescription {
+  order: 2;
+  text-align: left; 
+  padding-left: 20px;
+
+}
+
+
+/* 03 — BOTTOM */
+
+.nodeBottom {
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+}
+
+.nodeBottom .nodeDescription {
+  text-align: center;
+  order: 2;
+  margin-right : -400px;
+}
+
+
+/* 04 — LEFT */
+
+.nodeLeft {
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+  flex-direction: row;
+}
+
+.nodeLeft .nodeDescription {
+  text-align: right;
+  order: -1;
+  padding-right: 20px;
+}
+
+
+/* =========================================
+   CONNECTING LINES
+========================================= */
+
+.processNode::after {
+  content: "";
+  position: absolute;
+  background: #b8c7dd;
+  z-index: -1;
+}
+
+
+/* Top → Product */
+
+.nodeTop::after {
+  width: 1px;
+  height: 65px;
+  left: 50%;
+  top: 190px;
+}
+
+
+/* Right → Product */
+
+.nodeRight::after {
+  width: 65px;
+  height: 1px;
+  right: 190px;
+  top: 50%;
+}
+
+
+/* Bottom → Product */
+
+.nodeBottom::after {
+  width: 1px;
+  height: 65px;
+  left: 50%;
+  bottom: 190px;
+}
+
+
+/* Left → Product */
+
+.nodeLeft::after {
+  width: 65px;
+  height: 1px;
+  left: 190px;
+  top: 50%;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+  .process {
+    width: 100%;
+  }
+
+  .nodeRight {
+    right: 0;
+  }
+
+  .nodeLeft {
+    left: 0;
+  }
+
+  .nodeDescription {
+    width: 180px;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .decisionSection {
+    padding: 110px 0 120px;
+  }
+
+  .process {
+    height: auto;
+    margin-top: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .orbit {
+    display: none;
+  }
+
+  .productCircle {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    transform: none;
+
+    width: 240px;
+    height: 240px;
+
+    margin-bottom: 25px;
+  }
+
+  .processNode {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    transform: none !important;
+
+    width: min(100%, 500px);
+
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nodeDescription {
+    width: auto;
+    flex: 1;
+    text-align: left !important;
+  }
+
+  .processNode::after {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .decisionSection {
+    padding: 90px 0 100px;
+  }
+
+  .decisionIntro h2 {
+    font-size: 40px;
+  }
+
+  .decisionIntro > p {
+    font-size: 14px;
+  }
+
+  .process {
+    margin-top: 60px;
+  }
+
+  .productCircle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .productTitle {
+    font-size: 18px;
+  }
+
+  .nodeCircle {
+    width: 155px;
+    height: 155px;
+  }
+
+  .nodeNumber {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .nodeTitle {
+    font-size: 10px;
+  }
+
+  .nodeQuestion {
+    font-size: 10px;
+  }
+
+  .nodeDescription {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+}
+
+/* =========================================
+   WHAT I WORK ON
+========================================= */
+
+.workSection {
+  width: 100%;
+  padding: 140px 0;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.workHeader {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.workHeader .sectionLabel {
+  padding-top: 8px;
+}
+
+.workHeader h2 {
+  max-width: 800px;
+  color: var(--foreground);
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.workHeader h2 span {
+  color: var(--primary);
+}
+
+.workHeader > div > p {
+  max-width: 600px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   WORK GRID
+========================================= */
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+
+/* =========================================
+   WORK ITEM
+========================================= */
+
+.workItem {
+  min-height: 330px;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background: var(--surface);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.workItem:hover {
+  background: #f8faff;
+}
+
+
+/* =========================================
+   TOP ROW
+========================================= */
+
+.workTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workTop span:first-child {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.workTop span:last-child {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.workItem h3 {
+  max-width: 450px;
+  margin-top: 55px;
+
+  color: var(--foreground);
+
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.workItem > p {
+  max-width: 470px;
+  margin-top: 18px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   OUTPUT
+========================================= */
+
+.workOutput {
+  margin-top: auto;
+  padding-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--border);
+}
+
+.workOutput span {
+  color: var(--muted);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.workOutput strong {
+  color: var(--foreground);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .workSection {
+    padding: 100px 0;
+  }
+
+  .workHeader {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .workHeader h2 {
+    max-width: 700px;
+  }
+
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .workSection {
+    padding: 80px 0;
+  }
+
+  .workHeader h2 {
+    font-size: 42px;
+  }
+
+  .workHeader > div > p {
+    font-size: 14px;
+  }
+
+  .workItem {
+    min-height: 300px;
+    padding: 25px;
+  }
+
+  .workItem h3 {
+    margin-top: 45px;
+    font-size: 27px;
+  }
+
+  .workItem > p {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   TOOLS
+======================================== */
+
+.toolsSection {
+  padding: 100px 0 120px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 70px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.tool {
+  min-height: 125px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tool:hover {
+  background: rgba(37, 99, 235, 0.035);
+}
+
+.toolLogo {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolLogo img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.tool span {
   color: var(--foreground);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+/* ========================================
+   CLOSING
+======================================== */
+
+.closing {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 150px 0;
+  text-align: center;
+}
+
+.closingLabel {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.closing h2 {
+  margin-top: 24px;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.closing > p:last-child {
+  max-width: 570px;
+  margin: 32px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero,
+  .storySection,
+  .decisionSection,
+  .workSection,
+  .toolsSection {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .storyLine {
+    width: 100%;
+  }
+
+  .storyBlock {
+    max-width: 500px;
+  }
+
+  .toolsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 32px, var(--container-width));
+  }
+
+  .hero,
+  .storySection,
+  .decisionSection,
+  .workSection,
+  .toolsSection {
+    padding: 80px 0;
+  }
+
+  .heroContent h1 {
+    font-size: 48px;
+  }
+
+  .heroContent p {
+    font-size: 15px;
+  }
+
+  .questions {
+    grid-template-columns: 1fr;
+  }
+
+  .questions div:nth-child(odd) {
+    border-right: none;
+  }
+
+  .questions div:nth-child(even) {
+    padding-left: 0;
+  }
+
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workItem:nth-child(even) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .toolsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tool {
+    min-height: 100px;
+    padding: 18px;
+  }
+
+  .toolLogo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .toolLogo img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tool span {
+    font-size: 12px;
+  }
+
+  .closing {
+    padding: 100px 0;
+  }
+
+  .closing h2 {
+    font-size: 50px;
+  }
 }

@@ -16,11 +16,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-<header
-  className={`${styles.header} ${
-    pathname === "/" ? styles.homeHeader : ""
-  }`}
->      <div className={styles.container}>
+<header className={`${styles.header} ${styles.homeHeader}`}>    <div className={styles.container}>
         <Link href="/" className={styles.logo}>
           Neltine Unyoh
         </Link>
